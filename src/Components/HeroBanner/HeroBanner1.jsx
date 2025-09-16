@@ -25,22 +25,35 @@ const HeroBanner1 = ({bgImg,subTitle,title,content,btnName,btnUrl,image1,image2,
     return (
       <div className="hero_main_area1">
         <div className="hero1" data-background={bgImg}>
+          {/* Logo Section */}
+          <div className="hero-logo">
+            <img src="/assets/img/logo/header-logo1.png" alt="Logo" />
+          </div>
+          
           <div className="container">
             <div className="row">
               <div className="col-lg-5">
                 <div className="main-headding">
-                  <span className="span" data-aos="zoom-in-left" data-aos-duration="700"><img src="/assets/img/icons/span1.png" alt="" /> {subTitle}</span>
+                  <span className="span" data-aos="zoom-in-left" data-aos-duration="700">{subTitle}</span>
                   <h1 className="title tg-element-title">{parse(title)}</h1>
-                  <div className="space16"></div>
-                  <p>{content}</p>
+                  {content && (
+                    <>
+                      <div className="space16"></div>
+                      <p>{content}</p>
+                    </>
+                  )}
 
-                  <div className="space30"></div>
-                  <div className="buttons">
-                    <Link className="theme-btn1" to={btnUrl}>{btnName} <span><i className="bi bi-arrow-right"></i>
-                    </span></Link>
-                    <span onClick={handelClick} className="play-btn"><span><i className="bi bi-play"></i>
-                    </span> Watch Demo Video</span>
-                  </div>
+                  {btnName && (
+                    <>
+                      <div className="space30"></div>
+                      <div className="buttons">
+                        <Link className="theme-btn1" to={btnUrl}>{btnName} <span><i className="bi bi-arrow-right"></i>
+                        </span></Link>
+                        <span onClick={handelClick} className="play-btn"><span><i className="bi bi-play"></i>
+                        </span> Watch Demo Video</span>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
 

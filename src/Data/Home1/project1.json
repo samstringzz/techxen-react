@@ -1,32 +1,32 @@
 [
   {
     "img": "/assets/img/work/project-img1.png",   
-    "title": "Enterprise Resource Planning Implementation",
-    "btnName": "Learn More"
+    "title": "Digital Transformation Project",
+    "btnName": "View Gallery"
   },
   {
     "img": "/assets/img/work/project-img2.png",   
-    "title": "Enterprise Resource Planning Implementation",
-    "btnName": "Learn More"
+    "title": "Cloud Migration Solution",
+    "btnName": "View Gallery"
   },
   {
     "img": "/assets/img/work/project-img3.png",   
-    "title": "Enterprise Resource Planning Implementation",
-    "btnName": "Learn More"
+    "title": "Cybersecurity Implementation",
+    "btnName": "View Gallery"
   },
   {
     "img": "/assets/img/work/project-img1.png",   
-    "title": "Enterprise Resource Planning Implementation",
-    "btnName": "Learn More"
+    "title": "Mobile App Development",
+    "btnName": "View Gallery"
   },  
   {
     "img": "/assets/img/work/project-img2.png",   
-    "title": "Enterprise Resource Planning Implementation",
-    "btnName": "Learn More"
+    "title": "E-commerce Platform",
+    "btnName": "View Gallery"
   },
   {
     "img": "/assets/img/work/project-img3.png",   
-    "title": "Enterprise Resource Planning Implementation",
-    "btnName": "Learn More"
+    "title": "Data Analytics Dashboard",
+    "btnName": "View Gallery"
   }         
 ]

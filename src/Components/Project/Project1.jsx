@@ -43,8 +43,8 @@ const Project1 = () => {
               <div className="col-lg-8 m-auto text-center">
                 <div className="heading1">
                     <SectionTitle
-                        SubTitle="Our Project"
-                        Title="Driving Success Through Innovative IT Solution Project"
+                        SubTitle="Media Gallery"
+                        Title="Showcasing Our Creative Work & Projects"
                     ></SectionTitle>
                 </div>
               </div>
