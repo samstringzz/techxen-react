@@ -1,40 +1,40 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
 import data from '../../Data/Home1/project1.json';
 import SectionTitle from "../Common/SectionTitle";
 
-
 const Project1 = () => {
+    const [activeFilter, setActiveFilter] = useState('all');
+    const [lightboxImage, setLightboxImage] = useState(null);
 
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 2000,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        arrows: false,
-        swipeToSlide: true,
-        autoplay: true,
-        responsive: [
-          {
-            breakpoint: 1399,
-            settings: {
-              slidesToShow: 3,
-            }
-          },
-          {
-            breakpoint: 1199,
-            settings: {
-              slidesToShow: 2,
-            }
-          },{
-            breakpoint: 575,
-            settings: {
-              slidesToShow: 1,
-            }
-          }
-        ]
-      }; 
+    const categories = [
+        { id: 'all', name: 'All Projects' },
+        { id: 'web', name: 'Web Development' },
+        { id: 'mobile', name: 'Mobile Apps' },
+        { id: 'cloud', name: 'Cloud Solutions' },
+        { id: 'security', name: 'Cybersecurity' }
+    ];
+
+    const projectsWithCategories = [
+        { ...data[0], category: 'web' },
+        { ...data[1], category: 'mobile' },
+        { ...data[2], category: 'security' },
+        { ...data[3], category: 'web' },
+        { ...data[4], category: 'cloud' },
+        { ...data[5], category: 'mobile' }
+    ];
+
+    const filteredProjects = activeFilter === 'all' 
+        ? projectsWithCategories 
+        : projectsWithCategories.filter(project => project.category === activeFilter);
+
+    const openLightbox = (image) => {
+        setLightboxImage(image);
+    };
+
+    const closeLightbox = () => {
+        setLightboxImage(null);
+    };
 
     return (
         <div className="project sp">
@@ -50,33 +50,73 @@ const Project1 = () => {
               </div>
             </div>
 
-            <div className="space30"></div>
+            {/* Filter Buttons */}
             <div className="row">
-              <div className="project-slider cs_slider_gap_30">
-                <Slider {...settings}>
-                {data.map((item, i) => (
-                <div key={i} className="single-slider">
-                  <div className="slider-img">
-                    <img src={item.img} alt="" />
-                  </div>
-                  <div className="heading">
-                    <h3><Link to="/project/project-details">{item.title}</Link></h3>
-                    <Link to="/project/project-details" className="learn">{item.btnName} <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                        <path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-                      </svg>
-                        </span></Link>
-                  </div>
+              <div className="col-lg-12">
+                <div className="gallery-filters">
+                  {categories.map((category) => (
+                    <button
+                      key={category.id}
+                      className={`filter-btn ${activeFilter === category.id ? 'active' : ''}`}
+                      onClick={() => setActiveFilter(category.id)}
+                    >
+                      {category.name}
+                    </button>
+                  ))}
                 </div>
-                ))}
-                </Slider>
-
-              </div>
-
-
               </div>
             </div>
+
+            <div className="space30"></div>
+            
+            {/* Gallery Grid */}
+            <div className="row">
+              <div className="gallery-grid">
+                {filteredProjects.map((item, i) => (
+                  <div key={i} className="gallery-item" data-aos="fade-up" data-aos-delay={i * 100}>
+                    <div className="gallery-card">
+                      <div className="gallery-image" onClick={() => openLightbox(item.img)}>
+                        <img src={item.img} alt={item.title} />
+                        <div className="gallery-overlay">
+                          <div className="gallery-actions">
+                            <button className="gallery-btn" onClick={() => openLightbox(item.img)}>
+                              <i className="bi bi-zoom-in"></i>
+                            </button>
+                            <Link to="/project/project-details" className="gallery-btn">
+                              <i className="bi bi-arrow-right"></i>
+                            </Link>
+                          </div>
+                        </div>
+                        <div className="gallery-category">
+                          <span>{item.category}</span>
+                        </div>
+                      </div>
+                      <div className="gallery-content">
+                        <h3>{item.title}</h3>
+                        <p>Professional {item.category} solution</p>
+                        <Link to="/project/project-details" className="gallery-link">
+                          {item.btnName} <i className="bi bi-arrow-right"></i>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Lightbox */}
+            {lightboxImage && (
+              <div className="lightbox" onClick={closeLightbox}>
+                <div className="lightbox-content">
+                  <button className="lightbox-close" onClick={closeLightbox}>
+                    <i className="bi bi-x"></i>
+                  </button>
+                  <img src={lightboxImage} alt="Gallery" />
+                </div>
+              </div>
+            )}
           </div>
+        </div>
     );
 };
 
