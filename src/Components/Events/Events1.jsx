@@ -53,9 +53,6 @@ const Events1 = () => {
                   <div className="single-event-box">
                     <div className="event-image">
                       <img src={event.image} alt={event.title} />
-                      <div className="event-category">
-                        <span>{event.category}</span>
-                      </div>
                     </div>
                     <div className="event-content">
                       <h4>{event.title}</h4>

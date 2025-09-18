@@ -55,9 +55,6 @@ const Project1 = () => {
                             </button>
                           </div>
                         </div>
-                        <div className="gallery-category">
-                          <span>{item.category}</span>
-                        </div>
                       </div>
                       <div className="gallery-content">
                         <h3>{item.title}</h3>
