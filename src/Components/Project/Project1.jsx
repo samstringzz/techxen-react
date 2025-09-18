@@ -4,16 +4,7 @@ import data from '../../Data/Home1/project1.json';
 import SectionTitle from "../Common/SectionTitle";
 
 const Project1 = () => {
-    const [activeFilter, setActiveFilter] = useState('all');
     const [lightboxImage, setLightboxImage] = useState(null);
-
-    const categories = [
-        { id: 'all', name: 'All Projects' },
-        { id: 'web', name: 'Web Development' },
-        { id: 'mobile', name: 'Mobile Apps' },
-        { id: 'cloud', name: 'Cloud Solutions' },
-        { id: 'security', name: 'Cybersecurity' }
-    ];
 
     const projectsWithCategories = [
         { ...data[0], category: 'web' },
@@ -23,10 +14,6 @@ const Project1 = () => {
         { ...data[4], category: 'cloud' },
         { ...data[5], category: 'mobile' }
     ];
-
-    const filteredProjects = activeFilter === 'all' 
-        ? projectsWithCategories 
-        : projectsWithCategories.filter(project => project.category === activeFilter);
 
     const openLightbox = (image) => {
         setLightboxImage(image);
@@ -50,29 +37,13 @@ const Project1 = () => {
               </div>
             </div>
 
-            {/* Filter Buttons */}
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="gallery-filters">
-                  {categories.map((category) => (
-                    <button
-                      key={category.id}
-                      className={`filter-btn ${activeFilter === category.id ? 'active' : ''}`}
-                      onClick={() => setActiveFilter(category.id)}
-                    >
-                      {category.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
 
             <div className="space30"></div>
             
             {/* Gallery Grid */}
             <div className="row">
               <div className="gallery-grid">
-                {filteredProjects.map((item, i) => (
+                {projectsWithCategories.map((item, i) => (
                   <div key={i} className="gallery-item" data-aos="fade-up" data-aos-delay={i * 100}>
                     <div className="gallery-card">
                       <div className="gallery-image" onClick={() => openLightbox(item.img)}>
