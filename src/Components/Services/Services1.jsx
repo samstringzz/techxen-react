@@ -7,26 +7,29 @@ const Services1 = () => {
         {
             title: "Photography",
             description: "Professional photography services for personal branding and business needs.",
-            price: "₦150/session",
+            price: "N150",
+            priceUnit: "/SESSION",
             icon: "/assets/img/icons/service1.png",
             btnLink: "/service/service-details",
-            btnText: "Learn More"
+            btnText: "Learn More >>"
         },
         {
             title: "Brand Strategy",
             description: "Comprehensive brand development and strategic planning for entrepreneurs.",
-            price: "₦400/project",
+            price: "N400",
+            priceUnit: "/PROJECT",
             icon: "/assets/img/icons/service2.png",
             btnLink: "/service/service-details",
-            btnText: "Learn More"
+            btnText: "Learn More >>"
         },
         {
             title: "Social Media Marketing",
             description: "Expert social media management and content strategy for maximum engagement.",
-            price: "₦250/month",
+            price: "N250",
+            priceUnit: "/MONTH",
             icon: "/assets/img/icons/service3.png",
             btnLink: "/service/service-details",
-            btnText: "Learn More"
+            btnText: "Learn More >>"
         }
     ];
 
@@ -49,15 +52,13 @@ const Services1 = () => {
               {servicesWithPricing.map((service, i) => (
                 <div key={i} className="col-lg-4 col-md-6 col-12">
                   <div className="single-service-box">
-                    <div className="service-icon">
-                      <img src={service.icon} alt={service.title} />
-                    </div>
                     <div className="service-content">
-                      <h4>{service.title}</h4>
-                      <p className="service-description">{service.description}</p>
                       <div className="service-price">
                         <span className="price">{service.price}</span>
+                        <span className="price-unit">{service.priceUnit}</span>
                       </div>
+                      <h4>{service.title}</h4>
+                      <p className="service-description">{service.description}</p>
                       <Link to={service.btnLink} className="service-btn">{service.btnText}</Link>
                     </div>
                   </div>

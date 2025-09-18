@@ -18197,42 +18197,31 @@ a.header__search.header-search-btn p {
   color: #1F2937;
 }
 
-/* Services Section Styling (matching products design) */
+/* Services Section Styling */
 .services {
   padding: 80px 0;
-  background-color: #fff;
+  background-color: #f8f9fa;
 }
 
 .single-service-box {
-  background: #fff;
-  border-radius: 10px;
+  background: #e3f2fd;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
   margin-bottom: 30px;
-  border: 1px solid #eee;
   text-align: center;
-  padding: 30px 20px;
+  padding: 30px 25px;
 }
 
 .single-service-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.service-icon {
-  margin-bottom: 20px;
-}
-
-.service-icon img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .service-content h4 {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
   margin-bottom: 15px;
   color: #333;
 }
@@ -18241,126 +18230,121 @@ a.header__search.header-search-btn p {
   color: #666;
   font-size: 14px;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .service-price {
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .service-price .price {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
-  color: #0061FF;
+  color: #4caf50;
+  display: block;
+}
+
+.service-price .price-unit {
+  font-size: 14px;
+  color: #999;
+  font-weight: 500;
 }
 
 .service-btn {
   display: inline-block;
-  background: #0061FF;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 5px;
+  background: transparent;
+  color: #f44336;
+  padding: 0;
+  border: none;
   text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s ease;
-  width: 100%;
-  text-align: center;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  font-size: 16px;
+  text-align: left;
+  width: auto;
 }
 
 .service-btn:hover {
-  background: #0047AB;
-  color: white;
+  color: #d32f2f;
 }
 
 /* Products Section Styling */
 .products {
   padding: 80px 0;
-  background-color: #fff;
+  background-color: #f8f9fa;
 }
 
 .single-product-box {
-  background: #fff;
-  border-radius: 10px;
+  background: #e3f2fd;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
   margin-bottom: 30px;
-  border: 1px solid #eee;
+  padding: 25px;
+  position: relative;
 }
 
 .single-product-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.product-image {
-  position: relative;
-  height: 200px;
-  overflow: hidden;
-  background: #f8f9fa;
-}
-
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .product-rating {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: #fff;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
   font-weight: 600;
-  color: #0061FF;
+  color: #333;
+}
+
+.product-rating i {
+  color: #ffc107;
+  font-size: 16px;
 }
 
 .product-content {
-  padding: 25px;
+  text-align: center;
 }
 
 .product-content h4 {
   font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-weight: 700;
+  margin-bottom: 15px;
   color: #333;
 }
 
-.product-description {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
 .product-price {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .price {
   font-size: 24px;
   font-weight: 700;
-  color: #0061FF;
+  color: #333;
 }
 
 .product-btn {
   display: inline-block;
-  background: #0061FF;
+  background: #f44336;
   color: white;
-  padding: 12px 25px;
-  border-radius: 5px;
+  padding: 12px 30px;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: background 0.3s ease;
-  width: 100%;
-  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .product-btn:hover {
-  background: #0047AB;
+  background: #d32f2f;
   color: white;
 }
 

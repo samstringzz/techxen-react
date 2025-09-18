@@ -82,9 +82,6 @@ const Project1 = () => {
                             <button className="gallery-btn" onClick={() => openLightbox(item.img)}>
                               <i className="bi bi-zoom-in"></i>
                             </button>
-                            <Link to="/project/project-details" className="gallery-btn">
-                              <i className="bi bi-arrow-right"></i>
-                            </Link>
                           </div>
                         </div>
                         <div className="gallery-category">
@@ -94,9 +91,6 @@ const Project1 = () => {
                       <div className="gallery-content">
                         <h3>{item.title}</h3>
                         <p>Professional {item.category} solution</p>
-                        <Link to="/project/project-details" className="gallery-link">
-                          {item.btnName} <i className="bi bi-arrow-right"></i>
-                        </Link>
                       </div>
                     </div>
                   </div>
